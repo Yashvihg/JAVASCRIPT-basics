@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="wrapper"></div>
+  </body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      fetch("./data.json")
+        .then(function (response) {
+          if (response.ok) {
+            return response.json();
+            // this response.json is already on the client side, json() - is only reading it.
+          } else {
+            throw new Error("Something went wrong @");
+          }
+        })
+        .then(function (data) {
+          DisplayProducts(data);
+        });
+
+      function DisplayProducts(products) {
+        for (let index = 0; index < products.length; index++) {
+          CreateProductItem(products[index]);
+        }
+      }
+
+      function CreateProductItem(theProduct) {
+        var divProductItem = document.createElement("div");
+
+        var imageProduct = document.createElement("img");
+        imageProduct.src = theProduct.imageUrl;
+        divProductItem.appendChild(imageProductItem);
+        imageProductItem.style.width = "350px";
+        imageProductItem.style.height = "300px";
+        var divWrapper = document.getElementById("wrapper");
+        divWrapper.appendChild(divProductItem);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div>
+        <img src="" alt="" />
+        <h2>Title 1</h2>
+      </div>
+      <div>
+        <img src="" alt="" />
+        <h2>Title 2</h2>
+      </div>
+    </div>
+  </body>
+</html>
+
+-->

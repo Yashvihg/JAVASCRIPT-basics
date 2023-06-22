@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //1. object literal syntax
+      var company = {
+        name: "Bajaj Finance",
+        location: "pune",
+        getDetails: function () {
+          console.log(
+            "The company " + this.name + " is located at " + this.location
+          );
+        },
+      };
+      company.getDetails();
+
+      //2. USing object Object
+      var c = new Object();
+      c.name = "IBM";
+      c.location = "Pune";
+      c.getDetails = function () {
+        console.log(
+          "The company " + this.name + " is located at " + this.location
+        );
+      };
+      c.getDetails();
+
+      //3. Using Constructor
+      function Car() {
+        this.name = "BMW";
+        this.speed = 200;
+        this.accelerate = function () {
+          console.log("VVRRRRROOOOMMM...");
+        };
+      }
+
+      var carObj = new Car();
+      carObj.accelerate();
+
+      function Car(name, speed) {
+        this.name = name || "BMW";
+        this.speed = speed || 200;
+        this.accelerate = function () {
+          console.log(
+            "This car " + this.name + " is running at " + this.speed + " kmph!"
+          );
+        };
+      }
+
+      var carObj = new Car("BMW", 150); // we can pass default parameters, if we dont give parameters above with OR
+      carObj.accelerate();
+    </script>
+  </head>
+  <body></body>
+</html>

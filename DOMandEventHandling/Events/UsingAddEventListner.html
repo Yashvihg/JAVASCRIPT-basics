@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Dynamic Event Handler !</button>
+    <button id="target">Target</button>
+    <button id="remove">Remove Event Handler</button>
+    <script>
+      var btn = document.getElementById("btn");
+      btn.addEventListener("click", function () {
+        var targetBtn = document.getElementById("target");
+        targetBtn.addEventListener("click", function () {
+          console.log("Handler Added !");
+        });
+      });
+
+      //below approach is not possible since its an anonymous function.
+
+      //   var removeBtn = document.getElementById("remove");
+      //   removeBtn.addEventListener("click", function () {
+      //     //access the target bin
+      //     var targetBtn = document.getElementById("target");
+      //     targetBtn.removeEventListener("click", function(){
+      //         console.log("Handler Added !");
+      //     });
+      //   });
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Dynamic Event Handler !</button>
+    <button id="target">Target</button>
+    <button id="btnRemove">Remove Dynamic Event Handler !</button>
+
+    <script>
+      function EventHandler() {
+        var targetBtn = document.getElementById("target");
+        targetBtn. addEventListener("click", function () {
+          console.log("Handler Added !");
+        });
+      }
+      var btn = document.getElementById("btn");
+      btn.addEventListener("click", EventHandler);
+    </script>
+  </body>
+</html>
+ -->
+
+<!-- 
+
+    REMOVE EVENT LISTENER --
+
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">Add Dynamic Event Handler !</button>
+    <button id="target">Target</button>
+    <button id="btnRemove">Remove Dynamic Event Handler !</button>
+
+    <script>
+      function CustomHandler() {
+        console.log("Handler Added !");
+      }
+        function AnotherCustomHandler() {
+        console.log("Handler Added !");
+      }
+      
+      function EventHandler() {
+        var targetBtn = document.getElementById("target");
+        targetBtn.addEventListener("click", CustomHandler); // can add one more handler. 
+        targetBtn.addEventListener("click", AnotherCustomHandler);
+      }
+      var btn = document.getElementById("btn");
+      btn.addEventListener("click", EventHandler);
+
+      // this removes only ne function. 
+      var btnRemove = document.getElementById("btnRemove");
+      btnRemove.addEventListener("click", function () {
+        // access the target btn
+        var targetBtn = document.getElementById("target");
+        targetBtn.removeEventListener("click", CustomHandler);
+      });
+    </script>
+  </body>
+</html>
+
+  -->

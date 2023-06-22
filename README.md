@@ -1,0 +1,1 @@
+# JAVASCRIPT basics covered. Day 3 of training

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var x = 10;
+      var y = "20";
+      var z = 30;
+      var r = y + x + z;
+      console.log(r);
+      var j = x || 20;
+      // var u = parseInt(y);
+      var u = +y; // trying to convert string value to numeric value
+
+      var a = 10;
+      b = 10;
+
+      // checks for value but NOT type
+      if (a == b) {
+        console.log("a and b are equal (value)");
+      }
+
+      //checks for Value and type
+      if (a === b) {
+        console.log("a and b are equal (value and type)");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var x = null;
+      var y = "20";
+      var z = 30;
+      var r = y + x + z;
+      console.log(r);
+
+      var j = x || 20;
+
+      //   var u = parseInt(y);
+      var u = +y; // shortcut for converting into number
+    </script>
+  </head>
+  <body></body>
+</html>
+
+https://codeshare.io/X8VOpz
+-->

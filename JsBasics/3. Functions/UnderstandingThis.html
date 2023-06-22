@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Test() {
+        //console.log(this);
+        this.x = 100; //called with window
+        this.testify = function () {
+          console.log(this);
+        };
+        console.log(this);
+      }
+      Test(); // returns window
+      var t = new Test(); // when instance is created, its called with instance
+      t.testify(); // Returns Test.
+
+      function Emp() {
+        this.salary = 200000;
+        var _this = this;
+        setTimeout(function () {
+          console.log(_this); // here this is window, but _this is employee instance.
+        }, 2000); //called after sometime, so looses context of where it was, that is why we need to do _this.
+        //other solution is arrow functions from ES6.
+      }
+
+      var e = new Emp();
+
+      // only outer variables are closure variables.
+      //NON closure variables
+      //   function Outer(){
+      //     var msg = "Hello";
+      //     function Inner() {
+      //         console.log(msg);
+      //     }
+      //     Inner(); // inner is fully executed before outer.
+      //   }
+      //   Outer();
+
+      // Closure Variables
+
+      //   function Outer() {
+      //     var msg = "Hello"; // closure variables
+
+      //     return function () {
+      //       console.log(msg); // ?? before outer function ends inner is still not done
+      //     };
+      //   }
+
+      //   var Inner = Outer();
+      //   Inner();
+    </script>
+  </head>
+  <body></body>
+</html>

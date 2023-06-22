@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //spread operator
+      let cars = ["BMW", "AUDI"];
+      let moreCars = ["Tata", "Maruti"];
+      //try to combine the two arrays -
+      let allCars = [...cars, ...moreCars];
+
+      //   let person = { name: "Federer", country: "switzerland" };
+      //   let player = { ...person, name: "R federer", sport: "Tennis" }; // name is same property, gets overwritten
+
+      //default parameters
+      function PrintBook(author = "Dummy", title = "Unknown", noOfPages = 100) {
+        console.log(author, title, noOfPages);
+      }
+      PrintBook();
+      PrintBook("Dr. APJ abdul kalam", "wings of fire", 300);
+      PrintBook("Dr. APJ abdul kalam", "asdfghjkl");
+      PrintBook(undefined, "XYZ", 0);
+
+      function Add(x, y) {
+        return x + y;
+      }
+
+      //arrow Functions
+      var Add = (x, y) => {
+        return x + y;
+      };
+      //or
+
+      var Add = (x, y) => x + y;
+      console.log(Add(20, 30));
+      var Square = (x) => x * x; //single parameter, round brakets are optional.
+      var PrintSomething = () => console.log("something");
+
+      cars.forEach(function (car) {
+        console.log(car);
+      });
+
+      cars.forEach((car) => console.log(car)); //if you put {} then it means u cant return anything.
+      // no {} bracket means an implicit return.
+    </script>
+  </head>
+  <body></body>
+</html>
+
+<!--
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let x;
+      x = 20;
+      //   if (true) {
+      //     console.log(x); // stops variable hoisting
+      //     let x = 10; // block scoped
+      //   }
+
+      //   let x = 10;
+      //   // 10 lines
+      //   {
+      //     let x = 20;
+      //     console.log(x);
+      //   }
+
+      //   const PI = 3.14;
+      //PI = 3.1434;// Error
+
+      //   const person = { name: "Amit" };
+      //   //person = {};
+      //   person.location = "XYZ";
+
+      // Operators
+
+      // Spread Operator- Array
+      //   let cars = ["BMW", "AUDI"];
+      //   let moreCars = ["TATA", "MARUTI"];
+      //   let allCars = [...cars, ...moreCars];
+      //   // With Objects
+      //   let person = { name: "Federer", country: "Swizterland" };
+      //   let player = { ...person,  sport: "Tennis" };
+
+      // Destructuring
+      let cars = ["BMW", "AUDI"];
+      //   let firstCar, secondCar;
+      //   firstCar = cars[0];
+      //   secondCar = cars[1];
+      // OR
+      let [firstCar, secondCar, thirdCar = "Dummy"] = cars;
+
+      // With Objects
+      let person = { name: "Federer", country: "Swizterland", sport: "Tennis" };
+      //   let name = person.name;
+      //   let sport = person.sport;
+      // OR
+      let { name, sport } = person;
+
+      function PersonDetails({ name, sport }) {
+        console.log(name, sport);
+      }
+
+      PersonDetails(person);
+    </script>
+  </head>
+  <body></body>
+</html>
+
+
+-->

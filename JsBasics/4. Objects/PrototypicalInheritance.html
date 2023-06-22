@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var obj = { name: "pune" };
+      console.log(obj.toString());
+      obj.hasOwnProperty("name"); //prints TRUE
+      obj.hasOwnProperty("toString"); // prints FALSE
+
+      function Car() {
+        this.name = "BMW";
+      }
+
+      //   var carObj = new Car();
+
+      function JamesBondCar() {
+        this.useNitro = true;
+      }
+
+      JamesBondCar.prototype = new Car();
+      var jbc = new JamesBondCar();
+      console.log(jbc.hasOwnProperty("name")); // used to know the difference bwtween inherited property and its own prop.
+      //output of above is FALSE.
+    </script>
+  </head>
+  <body></body>
+</html>

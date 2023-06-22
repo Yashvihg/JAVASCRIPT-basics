@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var book = {
+        title: "Wings Of Fire",
+        author: "Dr. APJ Abdul Kalam",
+      };
+
+      //   console.log(book.title);
+
+      //   console.log(book["title"]);
+      //associative arrow syntax
+      for (var prop in book) {
+        console.log(prop);
+        console.log(book[prop]);
+      }
+
+      var book = {};
+      // this is used to define properties for properties like read write etc.
+      //   Object.defineProperty(book, "title", {
+      //     writable: false,
+      //     enumerable: true,
+      //     value: "Wings Of Fire",
+      //   });
+      Object.defineProperty(book, {
+        title: {
+          writable: false,
+          enumerable: true,
+          value: "Wings Of Fire",
+        },
+        author: {
+          writable: false,
+          enumerable: true,
+          value: "Dr. APJ Abdul Kalam",
+        },
+      });
+
+      for (var prop in book) {
+        console.log(prop);
+        console.log(book[prop]);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

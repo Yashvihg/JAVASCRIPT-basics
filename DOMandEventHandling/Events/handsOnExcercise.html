@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+        function Add(){
+            var num1 = parseInt(document.getElementById("n1").value,);
+            var num2 = parseInt(document.getElementById("n2").value,);
+            // var sum = num1+num2;
+            // para.Value = sum;
+            ResultDiv.innerHTML = (num1+num2);
+        }
+    </script>
+  </head>
+  <body>
+    <!-- <div> -->
+      First Number : <input type="text" id="n1" />
+      Second Number : <input type="text" id="n2" />
+      <button onclick="Add()">Add</button>
+      <p>The addition is: <p id="para"></p></p>
+    <!-- </div>     -->
+  </body>
+</html>
+
+
+
+
+<!-- 
+
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function Add() {
+        var firstNum = parseInt(
+          document.getElementById("txtfirstNumber").value,
+        );
+        var secondNum = parseInt(
+          document.getElementById("txtsecondNumber").value,
+        );
+
+        var resultDiv = document.getElementById("result");
+        resultDiv.innerHTML = "<strong>" + (firstNum + secondNum) + "</strong>";
+      }
+    </script>
+  </head>
+  <body>
+    First Number :
+    <input type="text" id="txtfirstNumber" />
+    Second Number :
+    <input type="text" id="txtsecondNumber" />
+
+    <button onclick="Add()">Add</button>
+
+    <div id="result"></div>
+  </body>
+</html>
+
+ -->

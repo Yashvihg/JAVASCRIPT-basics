@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var person = {
+        name: "Amit",
+        greet: function (greeting) {
+          console.log(greeting + " " + this.name + "!");
+        },
+      };
+      person.greet("Hello");
+
+      var anotherPerson = { name: "Sujeet" }; // we can allow this object to borrow the greet function from person.
+      person.greet.call(anotherPerson, "Hey"); // object on function.
+      person.greet.apply(anotherPerson, ["HOLA"]); //for array
+
+      //BIND
+      var anotherPersonBindedWithGreet = person.greet.bind(anotherPerson);
+      //after 100 lines of coed
+      anotherPersonBindedWithGreet("hi");
+
+      // Below "bye" is NOT used as hi was initially binded with anotherPerson
+      //      var anotherPersonBindedWithGreet = person.greet.bind(anotherPerson, "hi");
+      //after 100 lines of coed
+      // anotherPersonBindedWithGreet("bye");
+    </script>
+  </head>
+  <body></body>
+</html>

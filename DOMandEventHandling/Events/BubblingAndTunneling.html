@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   window.addEventListener("DOMContentLoaded", function () {
+      //     console.log("Initialize here!");
+      //   });
+    </script>
+  </head>
+  <body>
+    <!-- first tunneling happens (smaller in heirarchy) then bubbling happens -->
+    <div id="parent"><button id="targetButton">Click Me !</button></div>
+    <script>
+      var btn = document.getElementById("targetButton");
+      btn.addEventListener("click", function () {
+        console.log("button clicked");
+      });
+      var parentDiv = document.getElementById("parent");
+      parentDiv.addEventListener("click", function () {
+        console.log("DIV clicked");
+      });
+
+      // tunneling is when div works first and button later. from parent to target element
+      // capturing phase means tunneling
+    </script>
+  </body>
+</html>
+
+<!-- event delegation -->
+<!-- stop propocation (for tunneling), cancel bubble -->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   window.addEventListener("DOMContentLoaded", function () {
+      //     console.log("Initialize here !");
+      //   });
+    </script>
+  </head>
+  <body>
+    <div id="parent" style="border: 2px solid red; margin: 10px; padding: 10px">
+      <button id="targetButton1">Click Me 1!</button>
+      <button id="targetButton2">Click Me 2!</button>
+    </div>
+
+    <script>
+      //   var btn = document.getElementById("targetButton");
+      //   btn.addEventListener("click", function () {
+      //     console.log("U Clicked !");
+      //   });
+
+      var parentDiv = document.getElementById("parent");
+      parentDiv.addEventListener("click", function (e) {
+        e = e || event;
+        console.log("Click of Div Handled Here !");
+       
+        if(e.target.id == "targetButton1"){
+            console.log("Target Button 1 clicked !")
+        }
+        else if(e.target.id == "targetButton2"){
+            alert("Target Button 2 clicked !")
+        }
+       
+      });
+    </script>
+  </body>
+</html>
+
+-->

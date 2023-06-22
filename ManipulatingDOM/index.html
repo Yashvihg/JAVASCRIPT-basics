@@ -1,0 +1,39 @@
+<!-- // Index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+      var aPromise = GetData();
+      aPromise.then(
+        function (response) {
+          var posts = response.data;
+          var ulList = document.getElementById("postsList");
+
+          for (let index = 0; index < posts.length; index++) {
+            var newLi = document.createElement("li");
+            newLi.innerText = posts[index].title;
+            ulList.appendChild(newLi);
+          }
+        },
+        function (err) {
+          console.log("Promise Rejected !");
+          console.log(err);
+        }
+      );
+      console.log("Program Ended !");
+    </script>
+  </head>
+  <body>
+    <h1>List of all Posts</h1>
+
+    <ul id="postsList"></ul>
+  </body>
+</html>
